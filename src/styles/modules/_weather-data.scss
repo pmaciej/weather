@@ -1,0 +1,69 @@
+.weather-data {
+  text-align: center;
+  margin-top: 3rem;
+
+  &__city {
+    color: $colour-2;
+  }
+
+  &__box {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5rem;
+    @include respond(tablet) {
+      margin-top: 2rem;
+    }
+    @include respond(largePhone) {
+      margin-top: 4rem;
+    }
+  }
+
+  &__property {
+    position: relative;
+    margin: 0 3rem;
+    @include respond(smallPhone) {
+      margin: 0 2rem;
+    }
+  }
+
+  &__title {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+
+  &__value {
+    color: $colour-2;
+    font-size: 4rem;
+    line-height: 0.6;
+    @include respond(smallPhone) {
+      font-size: 3rem;
+    }
+  }
+
+  &__button {
+
+    color: white;
+    background-color: #FFAB94;
+    padding: 7px;
+
+    
+  }
+  &__icon {
+    position:absolute;
+    left: 50%;
+    top: 70%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+
+
+input::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+
