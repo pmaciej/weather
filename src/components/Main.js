@@ -21,8 +21,6 @@ const Main = () => {
   const [location, setLocation] = useState(null);
 
 
-  
-
   useEffect(() => {
     if (localStorage.getItem(localStorageName) === null) {
       navigator.geolocation.getCurrentPosition((position) => {
@@ -105,7 +103,7 @@ const Main = () => {
           <WeatherSearch />
           <Error error={error} />
           {!weather &&  <span style={{opacity: 0}} data-testid="loading">Loading testing data...</span>}
-          {weather  && <span style={{opacity: 0}} data-testid="resolved">{weather}</span>}
+          {weather  && <span style={{opacity: 0}} data-testid="resolved">{weather.test}</span>}
           {weather &&
             location !== null &&
             location !== undefined && 

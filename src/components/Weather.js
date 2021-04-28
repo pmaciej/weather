@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 
-const Weather = ({location, date, dayName, tempData, icon, windSpeed}) => {
+const Weather = ({location, date, dayName, tempData, icon, description, windSpeed}) => {
   const {
     tempMinCelsius,
     tempMaxCelsius,
@@ -19,7 +19,6 @@ const Weather = ({location, date, dayName, tempData, icon, windSpeed}) => {
     });
     setClick(false);
   }, [tempMinCelsius, tempMaxCelsius]);
-
   const onClick = () => {
     if (click === false) {
       setTemp({
@@ -64,7 +63,7 @@ const Weather = ({location, date, dayName, tempData, icon, windSpeed}) => {
         <span className="weather-data__property">
           <p className="weather-data__title">Weather State</p>
           <p className="weather-data__value">&nbsp;</p>
-          <img className="weather-data__icon" src={iconUrl} />
+          <img className="weather-data__icon" alt={description} src={iconUrl} />
         </span>
         <span className="weather-data__property">
           <p className="weather-data__title">Wind Speed</p>

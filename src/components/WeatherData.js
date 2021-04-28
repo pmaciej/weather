@@ -7,11 +7,11 @@ const WeatherData = (day) => {
   const {location} = useContext(Context);
   const {
     temp: {min: tempMin, max: tempMax},
-    weather: [{icon}],
+    weather: [{icon, description}],
     dt,
     wind_speed,
   } = day.day;
-  
+
   const convertedDate = new Date(dt * 1000);
   const date = convertedDate.toISOString().slice(0, 10);
   const dayName = convertedDate.toLocaleString('en-us', {weekday: 'long'});
@@ -22,6 +22,7 @@ const WeatherData = (day) => {
       tempData={tempData}
       windSpeed={wind_speed}
       icon={icon}
+      description={description}
       date={date}
       dayName={dayName}
       location={location}

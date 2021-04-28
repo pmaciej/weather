@@ -18,7 +18,7 @@ const mockGeolocation = {
 };
 global.navigator.geolocation = mockGeolocation;
   // Co ma zwrocic axios gdy 'get' jest wykonany
-  axiosMock.get.mockResolvedValueOnce({ data: {daily: "fetched weather data"} } );
+  axiosMock.get.mockResolvedValueOnce({data:{daily:{test:"some fetched weather data"}}});
   axiosMock.get.mockResolvedValueOnce({ data: {} });
 
   // Renderuje moj komponent main i destrukturyzuje funkcje getTestId zeby znalezc poszczegolne elementy
@@ -36,7 +36,7 @@ const locationUrl = "https://api.openweathermap.org/geo/1.0/reverse?lat=51.1&lon
   const resolvedSpan = await waitForElement(() => getByTestId("resolved"));
 
   // sprawdzamy czy resolvedSpan zawiera odpowiednie dane
-  expect(resolvedSpan).toHaveTextContent("fetched weather data");
+  expect(resolvedSpan).toHaveTextContent("some fetched weather data");
   // sprawdzamy czy axios odpalil sie odpowiednia liczbe razy
   expect(axiosMock.get).toHaveBeenCalledTimes(2);
   // sprawdzamy czy odpalil sie tez z odpowiednimi urlami
