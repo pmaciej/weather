@@ -1,12 +1,14 @@
 import React, {useState, useEffect} from 'react';
 
-const Weather = ({location, date, dayName, tempData, icon, description, windSpeed}) => {
+const Weather = ({location, date, dayName, tempData, icon, description, windSpeed, index}) => {
   const {
     tempMinCelsius,
     tempMaxCelsius,
     tempMinFarenheit,
     tempMaxFarenheit,
   } = tempData;
+
+
   const iconUrl = `http://openweathermap.org/img/wn/${icon}@2x.png`;
   const [temp, setTemp] = useState({});
   const [click, setClick] = useState(false);
@@ -66,8 +68,8 @@ const Weather = ({location, date, dayName, tempData, icon, description, windSpee
           <img className="weather-data__icon" alt={description} src={iconUrl} />
         </span>
         <span className="weather-data__property">
-          <p className="weather-data__title">Wind Speed</p>
-          <p className="weather-data__value">{windSpeed}</p>
+          <p  className="weather-data__title">Wind Speed</p>
+          <p  data-testid={`resolved_windSpeed_${index}`}className="weather-data__value">{windSpeed}</p>
         </span>
       </div>
     </div>

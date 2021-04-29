@@ -4,6 +4,7 @@ import Context from '../Context';
 import Weather from './Weather';
 
 const WeatherData = (day) => {
+
   const {location} = useContext(Context);
   const {
     temp: {min: tempMin, max: tempMax},
@@ -11,6 +12,7 @@ const WeatherData = (day) => {
     dt,
     wind_speed,
   } = day.day;
+
 
   const convertedDate = new Date(dt * 1000);
   const date = convertedDate.toISOString().slice(0, 10);
@@ -26,6 +28,7 @@ const WeatherData = (day) => {
       date={date}
       dayName={dayName}
       location={location}
+      index={day.index}
     />
   );
 };

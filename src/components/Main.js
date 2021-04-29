@@ -87,6 +87,7 @@ const Main = () => {
 
 
 
+
   return (
     <div className="main">
       <Header />
@@ -102,13 +103,12 @@ const Main = () => {
           <Tagline />
           <WeatherSearch />
           <Error error={error} />
-          {!weather &&  <span style={{opacity: 0}} data-testid="loading">Loading testing data...</span>}
-          {weather  && <span style={{opacity: 0}} data-testid="resolved">{weather.test}</span>}
+          {!weather &&  <h1 data-testid="loading">Loading Data...</h1>}
           {weather &&
             location !== null &&
             location !== undefined && 
             weather.slice(0, NUMBER_OF_DAYS_TO_DISPLAY).map((item, index) => {
-              return <WeatherData key={index} day={item} />;
+              return <WeatherData key={index} day={item} index={index} />;
             })}
         </Context.Provider>
         <Footer />
@@ -118,5 +118,4 @@ const Main = () => {
 };
 
 export default Main;
-
 

@@ -1,3 +1,3 @@
 export default {
-  get: jest.fn().mockResolvedValue({ weather: {} })
+  get: jest.fn().mockResolvedValue({ data: {} })
 };

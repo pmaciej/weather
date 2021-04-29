@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`fetchuje wewnatrz useEffect i wyswietla poprawne dane w dokumencie 1`] = `
+<p
+  class="weather-data__value"
+  data-testid="resolved_windSpeed_0"
+>
+  4.79
+</p>
+`;
+
+exports[`fetchuje wewnatrz useEffect i wyswietla poprawne dane w dokumencie 2`] = `
+<p
+  class="weather-data__value"
+  data-testid="resolved_windSpeed_1"
+>
+  2.58
+</p>
+`;
+
+exports[`fetchuje wewnatrz useEffect i wyswietla poprawne dane w dokumencie 3`] = `
+<p
+  class="weather-data__value"
+  data-testid="resolved_windSpeed_2"
+>
+  2.11
+</p>
+`;
