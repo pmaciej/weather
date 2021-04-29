@@ -183,13 +183,13 @@ it('fetchuje wewnatrz useEffect i wyswietla poprawne dane w dokumencie', async (
   const locationUrl =
     'https://api.openweathermap.org/geo/1.0/reverse?lat=51.1&lon=45.3&limit=1&appid=73c0982abf0e86dcf74fc6c59c74b8f0';
 
-  // Renderuje moj komponent main i destrukturyzuje funkcje getTestId zeby znalezc moje testowe id
+  // renderuje moj komponent main i destrukturyzuje funkcje getTestId zeby znalezc moje testowe id
   const {getByTestId} = render(<Main />);
 
   // sprawdzam czy podczas pierwszego renderu pojawi sie div z teskstem loading
   expect(getByTestId('loading')).toHaveTextContent('Loading Data...');
 
-  //  po pierwszym renderze w useEffect wykonuje sie axios wiec czekamy na elementy z testowymi id ktory maja zostac nastepnie wyrenderowane
+  //  po pierwszym renderze w useEffect wykonuje sie axios wiec czekamy na elementy z testowymi id (predkosc wiatru w komponencie Weather) ktory maja zostac nastepnie wyrenderowane
   const wind_speed_first_value = await waitForElement(() =>
     getByTestId('resolved_windSpeed_0')
   );
