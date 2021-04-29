@@ -189,7 +189,7 @@ it('fetchuje wewnatrz useEffect i wyswietla poprawne dane w dokumencie', async (
   // sprawdzam czy podczas pierwszego renderu pojawi sie div z teskstem loading
   expect(getByTestId('loading')).toHaveTextContent('Loading Data...');
 
-  //  po pierwszym renderze w useEffect wykonuje sie axios wiec czekamy na elementy z testowymi id (predkosc wiatru w komponencie Weather) ktory maja zostac nastepnie wyrenderowane
+  //  po pierwszym renderze w useEffect wykonuje sie axios wiec czekamy na elementy z testowymi id (predkosc wiatru w komponencie Weather) ktore maja zostac nastepnie wyrenderowane
   const wind_speed_first_value = await waitForElement(() =>
     getByTestId('resolved_windSpeed_0')
   );
@@ -200,18 +200,18 @@ it('fetchuje wewnatrz useEffect i wyswietla poprawne dane w dokumencie', async (
     getByTestId('resolved_windSpeed_2')
   );
 
-  // sprawdzamy czy axios odpalil sie odpowiednia liczbe razy
+  // sprawdzam czy axios odpalil sie odpowiednia liczbe razy
   expect(axiosMock.get).toHaveBeenCalledTimes(2);
-  // sprawdzamy czy odpalil sie tez z odpowiednimi urlami
+  // sprawdzam czy odpalil sie tez z odpowiednimi urlami
   expect(axiosMock.get).toHaveBeenCalledWith(weatherUrl);
   expect(axiosMock.get).toHaveBeenCalledWith(locationUrl);
 
-  // sprawdzamy czy testowe idki zawieraja odpowiednie dane
+  // sprawdzam czy testowe idki zawieraja odpowiednie dane
   expect(wind_speed_first_value).toHaveTextContent('4.79');
   expect(wind_speed_second_value).toHaveTextContent('2.58');
   expect(wind_speed_third_value).toHaveTextContent('2.11');
 
-  // sprawdzamy czy dane z idkow pasuja do snapshotow
+  // sprawdzam czy dane z idkow pasuja do snapshotow
   expect(wind_speed_first_value).toMatchSnapshot();
   expect(wind_speed_second_value).toMatchSnapshot();
   expect(wind_speed_third_value).toMatchSnapshot();
